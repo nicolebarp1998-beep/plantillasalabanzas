@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Confirmación Semanal</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            @page { margin: 1.5cm; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+        
+        .asunto-box {
+            background: #e7f3ff;
+            border: 2px solid #2196F3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .asunto-box strong {
+            color: #0d47a1;
+            font-size: 16px;
+        }
+        
+        .asunto-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #2196F3;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .checklist-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .checklist-container h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid #f093fb;
+            padding-bottom: 10px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #f093fb;
+        }
+        
+        .checklist-item:hover {
+            background: #e9ecef;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        
+        .checklist-text {
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .confirmation-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .confirmation-box h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .confirmation-box input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #28a745;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        .button {
+            background: #f093fb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #e07ae9;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        .instruction {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>✅ CHECKLIST DE CONFIRMACIÓN SEMANAL</h1>
+        <p style="margin: 0; opacity: 0.95;">Preparación y Compromiso Personal</p>
+    </div>
+
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <button class="button" onclick="location.reload()">🔄 Limpiar Formulario</button>
+    </div>
+
+    <div class="asunto-box">
+        <strong>📧 ASUNTO DEL CORREO/MENSAJE:</strong><br>
+        <input type="text" placeholder="Confirmación y Preparación Semanal para el Servicio del [FECHA]">
+    </div>
+
+    <div class="instruction">
+        💡 <strong>Instrucción:</strong> Marca cada casilla cuando hayas completado el punto correspondiente. Al finalizar, firma tu confirmación en la sección inferior.
+    </div>
+
+    <div class="checklist-container">
+        <h2>📋 CHECKLIST PERSONAL</h2>
+        
+        <div class="checklist-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check1">
+            </div>
+            <div class="checklist-text">
+                <label for="check1"><strong>He revisado la Matriz de Turnos</strong> y confirmo mi disponibilidad para este servicio.</label>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check2">
+            </div>
+            <div class="checklist-text">
+                <label for="check2"><strong>He descargado/revisado el Formato de Montaje</strong> (tono, orden, BPM).</label>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check3">
+            </div>
+            <div class="checklist-text">
+                <label for="check3"><strong>He escuchado la Pista de Referencia</strong> y ensayado las secciones críticas.</label>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check4">
+            </div>
+            <div class="checklist-text">
+                <label for="check4"><strong>Mi equipo está listo:</strong> cables, parches, pilas, instrumentos, etc. Todo en buen estado.</label>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check5">
+            </div>
+            <div class="checklist-text">
+                <label for="check5"><strong>Me comprometo a llegar a tiempo:</strong></label><br>
+                <input type="time" style="margin-top: 8px; padding: 8px; width: 150px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmation-box">
+        <h3>✍️ CONFIRMACIÓN REQUERIDA</h3>
+        <p><strong>Responda al líder con su nombre y la palabra "LISTO" para confirmar que ha completado todos los puntos.</strong></p>
+        
+        <label style="display: block; margin-top: 15px; font-weight: bold;">Tu Nombre:</label>
+        <input type="text" placeholder="Escribe tu nombre completo aquí">
+        
+        <label style="display: block; margin-top: 15px; font-weight: bold;">Confirmación:</label>
+        <input type="text" placeholder='Escribe "LISTO" cuando hayas completado todos los puntos'>
+        
+        <label style="display: block; margin-top: 15px; font-weight: bold;">Fecha de Confirmación:</label>
+        <input type="date">
+    </div>
+
+    <div style="background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+        <strong style="color: #721c24;">⚠️ Recordatorio Importante:</strong><br>
+        <span style="color: #721c24;">Este checklist es tu compromiso con el equipo y con Dios. La preparación es parte de tu servicio.</span>
+    </div>
+
+    <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        "Hagan todo decentemente y con orden" - 1 Corintios 14:40
+    </div>
+</body>
+</html>

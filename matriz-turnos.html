@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz Maestra de Turnos</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .info-box label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .info-box input, .info-box textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .pacto {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .pacto strong {
+            color: #856404;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .total-row {
+            background: #e9ecef !important;
+            font-weight: bold;
+        }
+        
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #5568d3;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛠️ MATRIZ MAESTRA DE TURNOS</h1>
+        <p style="margin: 0; opacity: 0.95;">Sistema de Gestión de Equipo de Alabanza</p>
+    </div>
+
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <button class="button" onclick="location.reload()">🔄 Limpiar Formulario</button>
+    </div>
+
+    <div class="info-box">
+        <label>Mes y Año:</label>
+        <input type="text" placeholder="Ej: Enero 2025" id="mes">
+        
+        <label style="margin-top: 15px;">Objetivo de Consistencia:</label>
+        <input type="text" value="90% de Consistencia" id="objetivo">
+    </div>
+
+    <div class="pacto">
+        <strong>📋 PACTO CLAVE:</strong><br>
+        El turno se acepta 48 horas después de la recepción de esta matriz. Si no puede asistir, debe notificarlo y buscar un reemplazo con la misma antelación.
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Fecha del Servicio</th>
+                <th style="width: 35%;">Líder Principal</th>
+                <th style="width: 35%;">Músicos Asignados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Domingo, 01/01</td>
+                <td><input type="text" placeholder="Nombre del líder"></td>
+                <td><input type="text" placeholder="Lista de músicos"></td>
+            </tr>
+            <tr>
+                <td>Domingo, 08/01</td>
+                <td><input type="text" placeholder="Nombre del líder"></td>
+                <td><input type="text" placeholder="Lista de músicos"></td>
+            </tr>
+            <tr>
+                <td>Domingo, 15/01</td>
+                <td><input type="text" placeholder="Nombre del líder"></td>
+                <td><input type="text" placeholder="Lista de músicos"></td>
+            </tr>
+            <tr>
+                <td>Domingo, 22/01</td>
+                <td><input type="text" placeholder="Nombre del líder"></td>
+                <td><input type="text" placeholder="Lista de músicos"></td>
+            </tr>
+            <tr>
+                <td>Domingo, 29/01</td>
+                <td><input type="text" placeholder="Nombre del líder"></td>
+                <td><input type="text" placeholder="Lista de músicos"></td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3">
+                    <strong>Total de Servicios por Músico:</strong> [Calcular manualmente al finalizar el mes]
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        Documento generado para gestión interna del equipo de alabanza
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato de Montaje y Repertorio</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            @page { margin: 1.5cm; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #11998e;
+        }
+        
+        .info-item label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+        
+        .info-item input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .objetivo-box {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .objetivo-box label {
+            font-weight: bold;
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .objetivo-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+            font-size: 14px;
+            min-height: 60px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #11998e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+        }
+        
+        td input {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .montaje-section {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            min-height: 150px;
+        }
+        
+        .montaje-section h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .reminder {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .reminder strong {
+            color: #721c24;
+        }
+        
+        .button {
+            background: #11998e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #0e7e72;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎵 FORMATO DE MONTAJE Y REPERTORIO</h1>
+        <p style="margin: 0; opacity: 0.95;">Guía de Preparación para el Servicio</p>
+    </div>
+
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <button class="button" onclick="location.reload()">🔄 Limpiar Formulario</button>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-item">
+            <label>📅 Fecha de Servicio:</label>
+            <input type="text" placeholder="Ej: Domingo 15 de Enero, 2025">
+        </div>
+        
+        <div class="info-item">
+            <label>👤 Líder de Alabanza:</label>
+            <input type="text" placeholder="Nombre del líder">
+        </div>
+        
+        <div class="info-item">
+            <label>🕐 Hora de Llegada (Puntualidad):</label>
+            <input type="time">
+        </div>
+        
+        <div class="info-item">
+            <label>🎤 Hora de Inicio de Ensayo:</label>
+            <input type="time">
+        </div>
+    </div>
+
+    <div class="objetivo-box">
+        <label>🎯 Objetivo del Ensayo:</label>
+        <textarea placeholder="Ej: Enfocarse en transiciones y dinámica vocal, no en aprender notas."></textarea>
+    </div>
+
+    <h2 style="color: #11998e; border-bottom: 2px solid #11998e; padding-bottom: 10px;">📝 REPERTORIO</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 30%;">Título de la Canción</th>
+                <th style="width: 15%;">Tonalidad (KEY)</th>
+                <th style="width: 15%;">Tempo (BPM)</th>
+                <th style="width: 35%;">Notas Clave / Transición</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="Nombre de canción"></td>
+                <td><input type="text" placeholder="Ej: C"></td>
+                <td><input type="text" placeholder="Ej: 120"></td>
+                <td><input type="text" placeholder="Notas importantes"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" placeholder="Nombre de canción"></td>
+                <td><input type="text" placeholder="Ej: G"></td>
+                <td><input type="text" placeholder="Ej: 135"></td>
+                <td><input type="text" placeholder="Notas importantes"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="text" placeholder="Nombre de canción"></td>
+                <td><input type="text" placeholder="Ej: D"></td>
+                <td><input type="text" placeholder="Ej: 145"></td>
+                <td><input type="text" placeholder="Notas importantes"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="text" placeholder="Nombre de canción"></td>
+                <td><input type="text" placeholder="Ej: A"></td>
+                <td><input type="text" placeholder="Ej: 128"></td>
+                <td><input type="text" placeholder="Notas importantes"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><input type="text" placeholder="Nombre de canción"></td>
+                <td><input type="text" placeholder="Ej: E"></td>
+                <td><input type="text" placeholder="Ej: 140"></td>
+                <td><input type="text" placeholder="Notas importantes"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="montaje-section">
+        <h3>🎸 MONTAJE (LAYOUT) DEL ESCENARIO</h3>
+        <p style="color: #856404; font-style: italic;">Dibuje o describa la ubicación de músicos e instrumentos:</p>
+        <div style="min-height: 100px; border: 1px dashed #856404; padding: 10px; background: white; border-radius: 3px;">
+            <span style="color: #999;">Espacio para diagrama o descripción del montaje...</span>
+        </div>
+    </div>
+
+    <div class="reminder">
+        <strong>⚠️ RECORDATORIO CLAVE:</strong><br>
+        Por favor, revisa el <strong>Checklist de Confirmación Semanal</strong> antes de responder a este mensaje.
+    </div>
+
+    <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        Este documento debe enviarse junto con las pistas de audio correspondientes
+    </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devocional y Conexión de Equipo</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            @page { margin: 1.5cm; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        
+        .header p {
+            margin: 0;
+            opacity: 0.95;
+            font-size: 15px;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            border-left: 5px solid #fa709a;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .info-section label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .info-section input, .info-section textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .theme-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .theme-box h2 {
+            margin-top: 0;
+            color: #2d3436;
+        }
+        
+        .theme-box textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #fdcb6e;
+            border-radius: 4px;
+            font-size: 15px;
+            min-height: 60px;
+            background: white;
+        }
+        
+        .verse-section {
+            background: #e3f2fd;
+            border: 2px solid #2196F3;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .verse-section h3 {
+            margin-top: 0;
+            color: #1565c0;
+        }
+        
+        .verse-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #2196F3;
+            border-radius: 4px;
+            font-size: 15px;
+            min-height: 80px;
+            background: white;
+            font-style: italic;
+        }
+        
+        .reflection-section {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .reflection-section h3 {
+            color: #fa709a;
+            margin-top: 0;
+            border-bottom: 2px solid #fa709a;
+            padding-bottom: 10px;
+        }
+        
+        .question-box {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #fa709a;
+        }
+        
+        .question-box strong {
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .question-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 70px;
+            font-size: 14px;
+        }
+        
+        .prayer-section {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .prayer-section h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .prayer-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #28a745;
+            border-radius: 4px;
+            min-height: 80px;
+            font-size: 14px;
+            background: white;
+        }
+        
+        .button {
+            background: #fa709a;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #f94877;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        .time-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🙏 DEVOCIONAL Y CONEXIÓN DE EQUIPO</h1>
+        <p>Los primeros 15 minutos del ensayo - Intencionalidad Espiritual</p>
+    </div>
+
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <button class="button" onclick="location.reload()">🔄 Limpiar Formulario</button>
+    </div>
+
+    <div class="time-note">
+        <strong>⏰ Tiempo Sugerido:</strong> 15 minutos al inicio del ensayo<br>
+        <em>Este tiempo es una inversión en la unidad y el propósito del equipo.</em>
+    </div>
+
+    <div class="info-section">
+        <label>📅 Fecha:</label>
+        <input type="date">
+    </div>
+
+    <div class="theme-box">
+        <h2>💡 Tema de la Semana</h2>
+        <textarea placeholder="Ej: El Servicio es un Privilegio, no una Carga"></textarea>
+    </div>
+
+    <div class="verse-section">
+        <h3>📖 Versículo Central</h3>
+        <textarea placeholder="Escribe el pasaje bíblico completo aquí (incluye la cita)
+        
+Ej: 'Hagan todo decentemente y con orden' - 1 Corintios 14:40"></textarea>
+    </div>
+
+    <div class="reflection-section">
+        <h3>🤔 REFLEXIÓN APLICADA</h3>
+        <p style="color: #666; margin-bottom: 20px;">Estas preguntas guían la conversación en equipo. Permitan que cada miembro comparta brevemente.</p>
+        
+        <div class="question-box">
+            <strong>Pregunta 1:</strong>
+            <textarea placeholder="Ej: ¿De qué manera nuestra falta de orden o preparación puede obstaculizar el mensaje de Dios a la congregación esta semana?
+
+Espacio para notas o respuestas del equipo..."></textarea>
+        </div>
+
+        <div class="question-box">
+            <strong>Pregunta 2:</strong>
+            <textarea placeholder="Ej: ¿Qué acción práctica podemos tomar hoy para honrar el valor de la Unidad en el ensayo?
+
+Espacio para notas o respuestas del equipo..."></textarea>
+        </div>
+    </div>
+
+    <div class="prayer-section">
+        <h3>🙌 MINUTO DE ORACIÓN</h3>
+        <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #155724;">Punto de Oración Específico:</label>
+        <textarea placeholder="Ej: Orar por el pastor y la congregación. Que Dios prepare los corazones para recibir Su palabra este domingo.
+
+También pueden incluir peticiones personales del equipo..."></textarea>
+    </div>
+
+    <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+        <strong style="color: #0d47a1;">💬 Notas Adicionales del Líder:</strong><br>
+        <textarea style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #2196F3; border-radius: 4px; min-height: 70px;"></textarea>
+    </div>
+
+    <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        "Porque donde dos o tres se reúnen en mi nombre, allí estoy yo en medio de ellos" - Mateo 18:20
+    </div>
+</body>
+</html>

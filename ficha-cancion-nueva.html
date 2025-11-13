@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Aprendizaje - Canción Nueva</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            @page { margin: 1.5cm; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        
+        .song-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .info-card {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .info-card label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .info-card input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .critical-section {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .critical-section h2 {
+            color: #856404;
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid #ffc107;
+            padding-bottom: 10px;
+        }
+        
+        .critical-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .critical-item strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .critical-item textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 60px;
+            font-size: 14px;
+        }
+        
+        .resources-section {
+            background: #e3f2fd;
+            border: 2px solid #2196F3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .resources-section h3 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .objective-section {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .objective-section h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .objective-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #28a745;
+            border-radius: 4px;
+            min-height: 80px;
+            font-size: 14px;
+            background: white;
+        }
+        
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #5568d3;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        .tip-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎼 FICHA DE APRENDIZAJE: CANCIÓN NUEVA</h1>
+        <p style="margin: 0; opacity: 0.95;">Estandarización de Introducción de Repertorio Nuevo</p>
+    </div>
+
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <button class="button" onclick="location.reload()">🔄 Limpiar Formulario</button>
+    </div>
+
+    <div class="tip-box">
+        <strong style="color: #721c24;">💡 Propósito de esta Ficha:</strong><br>
+        <span style="color: #721c24;">Asegurar que todo el equipo reciba la misma información clara sobre la nueva canción antes del ensayo.</span>
+    </div>
+
+    <div class="song-info-grid">
+        <div class="info-card">
+            <label>🎵 Título Oficial:</label>
+            <input type="text" placeholder="Nombre completo de la canción">
+        </div>
+        
+        <div class="info-card">
+            <label>🎹 Tonalidad Maestra (KEY):</label>
+            <input type="text" placeholder="Ej: C, G, D, A, etc.">
+        </div>
+        
+        <div class="info-card">
+            <label>⏱️ Tempo (BPM):</label>
+            <input type="number" placeholder="Ej: 120, 135, 145">
+        </div>
+        
+        <div class="info-card">
+            <label>👤 Líder Asignado:</label>
+            <input type="text" placeholder="Nombre del líder vocal">
+        </div>
+    </div>
+
+    <div class="critical-section">
+        <h2>🎯 SECCIONES CRÍTICAS</h2>
+        <p style="color: #856404; margin-top: 0;">Enfocarse en estos elementos específicos durante el ensayo:</p>
+        
+        <div class="critical-item">
+            <strong>1. Primera Sección Crítica:</strong>
+            <textarea placeholder="Ej: La entrada del bajo y la batería en el primer coro.
+
+Describe con detalle: ¿En qué momento? ¿Qué deben escuchar? ¿Qué técnica usar?"></textarea>
+        </div>
+
+        <div class="critical-item">
+            <strong>2. Segunda Sección Crítica:</strong>
+            <textarea placeholder="Ej: La modulación de tono en el puente.
+
+Describe el cambio exacto: ¿De qué tono a qué tono? ¿Cómo se prepara la transición?"></textarea>
+        </div>
+
+        <div class="critical-item">
+            <strong>3. Tercera Sección Crítica:</strong>
+            <textarea placeholder="Ej: El break o riff instrumental al final.
+
+Explica la sección: ¿Cuántos compases? ¿Qué instrumentos participan? ¿Hay improvisación?"></textarea>
+        </div>
+    </div>
+
+    <div class="resources-section">
+        <h3>📦 RECURSOS ENVIADOS AL EQUIPO</h3>
+        <p style="color: #1565c0; margin-bottom: 15px;">Marca los recursos que has compartido con el equipo:</p>
+        
+        <div class="checkbox-item">
+            <input type="checkbox" id="res1">
+            <label for="res1">Pista de Referencia (audio original o cover de referencia)</label>
+        </div>
+        
+        <div class="checkbox-item">
+            <input type="checkbox" id="res2">
+            <label for="res2">Pista con Click (metrónomo para práctica)</label>
+        </div>
+        
+        <div class="checkbox-item">
+            <input type="checkbox" id="res3">
+            <label for="res3">Partitura o Cifrado</label>
+        </div>
+        
+        <div class="checkbox-item">
+            <input type="checkbox" id="res4">
+            <label for="res4">Video Tutorial (opcional)</label>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <label style="font-weight: bold; color: #1565c0; display: block; margin-bottom: 8px;">Enlaces o Notas Adicionales:</label>
+            <textarea style="width: 100%; padding: 10px; border: 1px solid #2196F3; border-radius: 4px; min-height: 60px;"></textarea>
+        </div>
+    </div>
+
+    <div class="objective-section">
+        <h3>🎯 OBJETIVO DEL ENSAYO</h3>
+        <p style="color: #155724; margin-bottom: 10px;">Define claramente qué esperas lograr con esta canción en el ensayo:</p>
+        <textarea placeholder="Ej: Lograr que el equipo toque las secciones críticas con 100% de confianza, no con perfección.
+
+Recuerda: El objetivo NO es la perfección técnica inmediata, sino la confianza y la conexión del equipo con la canción."></textarea>
+    </div>
+
+    <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+        <strong style="color: #0d47a1;">📝 Notas Adicionales para el Equipo:</strong><br>
+        <textarea style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #2196F3; border-radius: 4px; min-height: 70px;" placeholder="Cualquier información adicional relevante: historia de la canción, mensaje especial, detalles técnicos, etc."></textarea>
+    </div>
+
+    <div style="background: #f8f9fa; border: 2px dashed #667eea; padding: 20px; border-radius: 8px; text-align: center;">
+        <strong style="color: #667eea; font-size: 16px;">⏰ Fecha Límite de Envío al Equipo:</strong><br>
+        <input type="date" style="margin-top: 10px; padding: 10px; border: 2px solid #667eea; border-radius: 4px; font-size: 15px;">
+        <p style="color: #666; margin-top: 10px; margin-bottom: 0;">Se recomienda enviar esta ficha al menos 5-7 días antes del ensayo.</p>
+    </div>
+
+    <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        La preparación individual hace posible la excelencia colectiva
+    </div>
+</body>
+</html>
