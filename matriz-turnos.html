@@ -147,31 +147,31 @@
                 <th style="width: 35%;">Músicos Asignados</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tablaServicios">
             <tr>
-                <td>Domingo, 01/01</td>
-                <td><input type="text" placeholder="Nombre del líder"></td>
-                <td><input type="text" placeholder="Lista de músicos"></td>
+                <td><input type="text" placeholder="Ej: Domingo, 01/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
             </tr>
             <tr>
-                <td>Domingo, 08/01</td>
-                <td><input type="text" placeholder="Nombre del líder"></td>
-                <td><input type="text" placeholder="Lista de músicos"></td>
+                <td><input type="text" placeholder="Ej: Sábado, 08/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
             </tr>
             <tr>
-                <td>Domingo, 15/01</td>
-                <td><input type="text" placeholder="Nombre del líder"></td>
-                <td><input type="text" placeholder="Lista de músicos"></td>
+                <td><input type="text" placeholder="Ej: Viernes, 15/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
             </tr>
             <tr>
-                <td>Domingo, 22/01</td>
-                <td><input type="text" placeholder="Nombre del líder"></td>
-                <td><input type="text" placeholder="Lista de músicos"></td>
+                <td><input type="text" placeholder="Ej: Domingo, 22/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
             </tr>
             <tr>
-                <td>Domingo, 29/01</td>
-                <td><input type="text" placeholder="Nombre del líder"></td>
-                <td><input type="text" placeholder="Lista de músicos"></td>
+                <td><input type="text" placeholder="Ej: Domingo, 29/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
             </tr>
             <tr class="total-row">
                 <td colspan="3">
@@ -184,5 +184,87 @@
     <div style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
         Documento generado para gestión interna del equipo de alabanza
     </div>
+    
+    <script>
+        // Función para agregar nueva fila automáticamente
+        function agregarNuevaFila() {
+            const tbody = document.getElementById('tablaServicios');
+            const totalRow = tbody.querySelector('.total-row');
+            
+            const nuevaFila = document.createElement('tr');
+            nuevaFila.innerHTML = `
+                <td><input type="text" placeholder="Ej: Domingo, 01/01" class="date-input"></td>
+                <td><input type="text" placeholder="Nombre del líder" class="leader-input"></td>
+                <td><input type="text" placeholder="Lista de músicos" class="musicians-input"></td>
+            `;
+            
+            // Insertar antes de la fila de totales
+            tbody.insertBefore(nuevaFila, totalRow);
+            
+            // Agregar eventos a los nuevos inputs
+            agregarEventos(nuevaFila);
+        }
+        
+        // Función para agregar eventos a una fila
+        function agregarEventos(fila) {
+            const inputs = fila.querySelectorAll('input');
+            inputs.forEach((input, index) => {
+                // Al presionar Tab en el último input de la fila
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Tab' && index === inputs.length - 1 && !e.shiftKey) {
+                        const tbody = document.getElementById('tablaServicios');
+                        const filas = Array.from(tbody.querySelectorAll('tr:not(.total-row)'));
+                        const filaActual = fila;
+                        
+                        // Si es la última fila, agregar una nueva
+                        if (filaActual === filas[filas.length - 1]) {
+                            e.preventDefault();
+                            agregarNuevaFila();
+                            // Enfocar el primer input de la nueva fila
+                            setTimeout(() => {
+                                const nuevaFilaInputs = tbody.querySelectorAll('tr:not(.total-row)');
+                                const ultimaFila = nuevaFilaInputs[nuevaFilaInputs.length - 1];
+                                ultimaFila.querySelector('input').focus();
+                            }, 10);
+                        }
+                    }
+                });
+                
+                // Al presionar Enter en cualquier input
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const tbody = document.getElementById('tablaServicios');
+                        const filas = Array.from(tbody.querySelectorAll('tr:not(.total-row)'));
+                        const filaActual = fila;
+                        
+                        // Si es la última fila, agregar una nueva
+                        if (filaActual === filas[filas.length - 1]) {
+                            agregarNuevaFila();
+                            // Enfocar el primer input de la nueva fila
+                            setTimeout(() => {
+                                const nuevaFilaInputs = tbody.querySelectorAll('tr:not(.total-row)');
+                                const ultimaFila = nuevaFilaInputs[nuevaFilaInputs.length - 1];
+                                ultimaFila.querySelector('input').focus();
+                            }, 10);
+                        } else {
+                            // Si no es la última, ir al mismo campo de la siguiente fila
+                            const siguienteFila = filas[filas.indexOf(filaActual) + 1];
+                            if (siguienteFila) {
+                                siguienteFila.querySelectorAll('input')[index].focus();
+                            }
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Inicializar eventos en las filas existentes
+        document.addEventListener('DOMContentLoaded', function() {
+            const tbody = document.getElementById('tablaServicios');
+            const filas = tbody.querySelectorAll('tr:not(.total-row)');
+            filas.forEach(fila => agregarEventos(fila));
+        });
+    </script>
 </body>
 </html>
